@@ -1,0 +1,9 @@
+<div class="card-columns m-5">
+    <div class="card" *ngFor="let p of pluginList">
+        <div class="card-body">
+            <h5 class="card-title">{{ p.title }}</h5>
+            <p class="card-text">{{ p.desc }}</p>
+            <a [routerLink]="p.url" class="btn btn-primary stretched-link">Go For Demo</a>
+        </div>
+    </div>
+</div>
