@@ -1,3 +1,12 @@
-
-<router-outlet></router-outlet>
+<div class="d-flex flex-column h-100 app-wrapper">
+    <div class="app-header">
+        <app-header></app-header>
+    </div>
+    <div class="flex-grow-1 app-body">
+        <router-outlet></router-outlet>
+    </div>
+    <div class="app-footer border bg-white d-none">
+        <app-footer></app-footer>
+    </div>
+</div>
 <ng-growl-alert></ng-growl-alert>

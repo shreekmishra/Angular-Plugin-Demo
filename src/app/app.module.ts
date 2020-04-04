@@ -13,6 +13,8 @@ import { GrowlSuccessDemoComponent } from './growl-alert-demo/growl-success-demo
 import { GrowlErrorDemoComponent } from './growl-alert-demo/growl-error-demo/growl-error-demo.component';
 import { GrowlInfoDemoComponent } from './growl-alert-demo/growl-info-demo/growl-info-demo.component';
 import { GrowlWarnDemoComponent } from './growl-alert-demo/growl-warn-demo/growl-warn-demo.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { GrowlWarnDemoComponent } from './growl-alert-demo/growl-warn-demo/growl
     GrowlSuccessDemoComponent,
     GrowlErrorDemoComponent,
     GrowlInfoDemoComponent,
-    GrowlWarnDemoComponent
+    GrowlWarnDemoComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

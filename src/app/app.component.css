@@ -1,0 +1,8 @@
+.app-wrapper {
+    min-height: 100vh;
+}
+
+.app-footer {
+    height: 50px;
+    overflow: hidden;
+}

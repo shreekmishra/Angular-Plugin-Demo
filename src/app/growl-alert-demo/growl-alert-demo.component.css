@@ -1,0 +1,40 @@
+.main-container {
+    min-height: calc(100vh - 57px - 50px);
+    margin-top: 57px;
+}
+
+.backdrop {
+    position  : fixed;
+    top       : 0;
+    left      : 0;
+    width     : 100vw;
+    height    : 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    z-index   : 9999;
+}
+
+@media (min-width: 768px) {
+    .left-sidebar {
+        position: sticky;
+        top     : 57px;
+        height  : calc(100vh - 57px);
+    }
+}
+
+@media (max-width: 766px) {
+    .left-sidebar {
+        transition : margin-left 0.25s;
+        position   : fixed;
+        display    : flex;
+        z-index    : 99999;
+        width      : calc(100vw - 100px);
+        min-height : calc(100vh - 60px);
+        margin-top : -57px;
+        margin-left: -100vw;
+    }
+
+    .left-sidebar.show {
+        margin-left: 0px;
+    }
+
+}

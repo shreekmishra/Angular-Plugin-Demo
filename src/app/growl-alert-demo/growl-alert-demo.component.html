@@ -1,33 +1,54 @@
-<div class="row">
-    <div class="col-md-2 d-md-block bg-light sidebar px-0 text-center">
-        <ul class="nav nav-pills flex-column">
-            <li class="nav-item">
-                <a class="nav-link" routerLinkActive="active" routerLink="installation">Get Started</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLinkActive="active" routerLink="alert-demo">Alert Demo</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLinkActive="active" routerLink="confirm-demo">Confirm Demo</a>
-            </li>
-        </ul>
-        <h6 class="d-flex px-3 mt-3 mb-1 text-muted" style="font-size: 0.75rem;"><span>Growl Messages</span></h6>
-        <ul class="nav nav-pills flex-column">
-            <li class="nav-item">
-                <a class="nav-link" routerLinkActive="active" routerLink="sucess-demo">Success Growl</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLinkActive="active" routerLink="error-demo">Error Growl</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLinkActive="active" routerLink="info-demo">Info Growl</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLinkActive="active" routerLink="warn-demo">Warning Growl</a>
-            </li>
-        </ul>
-    </div>
-    <div class="col-8">
-        <router-outlet></router-outlet>
+<div class="container-lg main-container">
+    <div class="row" style="min-height: inherit;">
+        <div class="col-md-3 px-0 bg-light border d-md-flex flex-column left-sidebar" [ngClass]="{'show' : showLeftSidebar}">
+            <div class="brand-holder d-md-none text-center">
+                <a routerLink="/" class="navbar-brand">Plugin-Demo</a>
+                <button class="close mr-3 mt-2 btn-lg" (click)="closeLeftSidebar()"><span class="icon-arrow-right"></span></button>
+            </div>
+            <div class="sidebar-menu-holder flex-grow-1">
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" routerLink="installation" (click)="closeLeftSidebar()">
+                            Get Started</a>
+                    </li>
+                </ul>
+                <h6 class="d-flex px-3 mt-3 mb-1 text-muted" style="font-size: 0.75rem;"><span>Pop ups</span></h6>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" routerLink="alert-demo" (click)="closeLeftSidebar()">Alert Box</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" routerLink="confirm-demo" (click)="closeLeftSidebar()">
+                            Confirm Box</a>
+                    </li>
+                </ul>
+                <h6 class="d-flex px-3 mt-3 mb-1 text-muted" style="font-size: 0.75rem;"><span>Growl Messages</span></h6>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" routerLink="success-demo" (click)="closeLeftSidebar()">Success Growl</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" routerLink="error-demo" (click)="closeLeftSidebar()">Error Growl</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" routerLink="info-demo" (click)="closeLeftSidebar()">Info Growl</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" routerLink="warn-demo" (click)="closeLeftSidebar()">Warning Growl</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-link-holder text-center d-md-none">
+                <div class="btn-group">
+                    <a href="https://github.com/shreekmishra/ng-Growl-Alert" class="btn btn-outline-dark mr-2"><span class="icon-github"></span></a>
+                    <a href="https://twitter.com/mishra2811" class="btn btn-outline-dark"><span class="icon-github"></span></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 col-12 border">
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </div>
+
+<div class="d-md-none backdrop" *ngIf="showLeftSidebar" (click)="closeLeftSidebar()"></div>

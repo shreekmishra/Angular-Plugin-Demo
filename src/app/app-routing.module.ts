@@ -14,10 +14,11 @@ import { GrowlWarnDemoComponent } from './growl-alert-demo/growl-warn-demo/growl
 const routes: Routes = [
   {path:'', component: PluginListComponent},
   {path:'growl-alert-demo', component: GrowlAlertDemoComponent, children: [
+      {path: '', redirectTo: 'installation', pathMatch: 'full'},
       {path: 'installation', component: GrowlAlertInstallationComponent},
       {path: 'alert-demo', component: AlertDemoComponent},
       {path: 'confirm-demo', component: ConfirmDemoComponent},
-      {path: 'sucess-demo', component: GrowlSuccessDemoComponent},
+      {path: 'success-demo', component: GrowlSuccessDemoComponent},
       {path: 'error-demo', component: GrowlErrorDemoComponent},
       {path: 'info-demo', component: GrowlInfoDemoComponent},
       {path: 'warn-demo', component: GrowlWarnDemoComponent}

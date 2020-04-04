@@ -1,1 +1,88 @@
-<p>growl-alert-installation works!</p>
+<div class="document">
+    <div id="introduction" class="topic-block">
+        <h1><span class="icon-chevron-right"></span> Introduction</h1>
+        <div class="content">
+            <p class="lead">
+                The 'ng-Growl-Alert' is an Angular plugin designes to provide informative messages in the browser.
+                This plugin has veriety of API to display alert message, confirm box and growl messages.
+            </p>
+            <div class="example">
+                <div class="example-sample">
+                    <button class="btn btn-outline-primary m-2" (click)="showAlert()">Click for Alert</button>
+                    <button class="btn btn-outline-success m-2" (click)="showConfirm()">Click for Confirm</button>
+                    <button class="btn btn-outline-secondary" (click)="showInfoGrowl()">Click for Growl</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="installation" class="topic-block">
+        <h1><span class="icon-chevron-right"></span> Installation</h1>
+        <div class="content">
+            <p class="lead">
+                First you need to initialize an Angular project.
+                If you are new to Angular and don't know how to create a Angular project, click
+                <a href="https://angular.io/start">here to learn Angular.</a>
+            </p>
+            <div class="example">
+                <div class="example-code">
+                    <pre class="prettyprint lang-shell">$ ng new demo<br/>$ cd demo</pre>
+                </div>
+            </div>
+            <p class="lead">
+                Execute the below command from project directory. This will download the module and add the dependency to your project.
+            </p>
+            <div class="example">
+                <div class="example-code">
+                    <pre class="prettyprint lang-shell">$ npm install ng-growl-alert</pre>
+                </div>
+            </div>
+            <p class="lead">
+                Next, you have to add <code>NgGrowlAlertModule</code> to your root module.
+            </p>
+        </div>
+    </div>
+    <div id="final-setup" class="topic-block">
+        <h1><span class="icon-chevron-right"></span> Final Setup</h1>
+        <div class="content">
+            <p class="lead">
+                You need to include the <code>NgGrowlAlertModule</code> in all modules where you need it.
+            </p>
+            <div class="example">
+                <div class="example-code">
+                    <pre class="prettyprint lang-typescript">import {{'{'}} NgGrowlAlertModule {{'}'}} from 'ng-growl-alert';
+
+@NgModule({{'{'}}
+  declarations : [
+    ...
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgGrowlAlertModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+{{'}'}})
+export class AppModule {{'{ }'}}</pre>
+                </div>
+            </div>
+            <p class="lead">
+                As a last step, you have to add the <code>ng-growl-alert</code> component in root component html (As the last line).
+            </p>
+            <div class="example">
+                <div class="example-code">
+                    <pre class="prettyprint lang-html">...
+&lt;router-outlet&gt;&lt;/router-outlet&gt;
+...
+&lt;ng-growl-alert&gt;&lt;/ng-growl-alert&gt;</pre>
+                </div>
+            </div>
+            <p class="lead">
+                With this final step, we are done with the setup. Now, let's move to first demo.
+            </p>
+            <div class="text-right">
+                <a class="btn btn-primary px-5" routerLink="../alert-demo" title="Alert Box">Next <span class="icon-arrow-right"></span></a>
+            </div>
+        </div>
+    </div>
+</div>

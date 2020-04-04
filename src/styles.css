@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+    min-height: 100vh;
+}
+
+pre.prettyprint {
+    border: 0px !important;
+    padding: 0px !important;
+}
+
+.topic-block {
+    margin-bottom: 30px;
+}
+
+.topic-block .content {
+    padding-left: 48px;
+}
+
+.example {
+    border: 2px #eee solid;
+    margin-bottom: 1rem;
+}
+
+.example .example-sample::before{
+    content: 'Example';
+    margin-top: -45px;
+    position: absolute;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 5px;
+}
+
+.example .example-sample {
+    padding: 15px 5px;
+    border-top: 30px #eee solid;
+}
+
+.example .example-code {
+    background-color: #f8f8f8;
+    padding: 1rem;
+}
+
+.example .example-code pre {
+    margin-bottom: 0px;
+}
