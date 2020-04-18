@@ -1,19 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { NgGrowlAlertService } from 'ng-growl-alert';
+
+declare const PR: any;
 
 @Component({
   selector: 'app-growl-alert-installation',
   templateUrl: './growl-alert-installation.component.html',
   styleUrls: ['./growl-alert-installation.component.css']
 })
-export class GrowlAlertInstallationComponent implements OnInit {
+export class GrowlAlertInstallationComponent implements OnInit, AfterViewChecked {
 
-  constructor( private alertService: NgGrowlAlertService) { }
+  constructor(private alertService: NgGrowlAlertService) { }
 
   ngOnInit() {
   }
 
-  showAlert(){
+  ngAfterViewChecked() {
+    PR.prettyPrint();
+  }
+
+  showAlert() {
     this.alertService.alert('This is an alert message', 'Example Alert', true);
   }
 

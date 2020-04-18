@@ -1,1 +1,118 @@
-<p>alert-demo works!</p>
+<div class="document">
+    <div id="alert-box" class="topic-block">
+        <h1><span class="icon-chevron-right"></span> Alert Box</h1>
+        <div class="content">
+            <p class="lead">
+                Alert Box is a special dialog box that inform users about some specific task or it may contain some critical information.
+                <code>ng-growl-alert</code> provides the ability to create an alert box dinamically.Here, user can acknowledge the information by clicking the okay button.
+            </p>
+            <div class="example">
+                <div class="example-sample">
+                    <button type="button" class="btn btn-outline-primary" (click)="showAlert('Get ready to learn.')">Click for Alert</button>
+                </div>
+                <div class="example-code">
+                    <pre class="prettyprint lang-typescript">this.alertService.alert("Get ready to learn.");</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="how-to" class="topic-block">
+        <h1><span class="icon-chevron-right"></span> How to use</h1>
+        <div class="content">
+            <p class="lead">
+                To create an alert box, first, we need to import <code>NgGrowlAlertService</code> service and inject in our component through constructor that we did in last chapter.
+                Next, we can use this services to create an alert box as shown in example.
+            </p>
+            <div class="example">
+                <div class="example-sample">
+                    <button type="button" class="btn btn-outline-primary" (click)="showAlert('My first alet box complete.')">Click for Alert</button>
+                </div>
+                <div class="example-code">
+                    <pre class="prettyprint lang-typescript">this.alertService.alert("My first alet box complete.");</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="alert-parameters" class="topic-block">
+        <h1><span class="icon-chevron-right"></span> Parameters</h1>
+        <div class="content">
+            <p class="lead">The function <code>alert</code> of <code>NgGrowlAlertService</code> accepts few parameters to customize the visuals and the displayed message.</p>
+            <table class="table table-bordered">
+                <thead class="thead-light">
+                    <tr>
+                        <th style="width : 100px">Name</th>
+                        <th style="width : 100px">Type</th>
+                        <th style="width : 100px">Default</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>message</td>
+                        <td>String</td>
+                        <td></td>
+                        <td>The message to be shown in the alert box.</td>
+                    </tr>
+                    <tr>
+                        <td>title</td>
+                        <td>String</td>
+                        <td>null</td>
+                        <td>This will be shown as the title of alert box. By default there will not be any title.</td>
+                    </tr>
+                    <tr>
+                        <td>allowClose</td>
+                        <td>boolean</td>
+                        <td>false</td>
+                        <td>If true, user can close the alet box by clicking the backdrop or the cross button and also using escape button. </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="example">
+                <div class="example-sample">
+                    <button type="button" class="btn btn-outline-primary" (click)="showAlert('The only message alert.')">Only Message Alert</button><br/>
+                    <button type="button" class="btn btn-outline-primary my-1" (click)="showAlert('The alert with message and title.', 'Alert Message')">Only Message Alert</button><br/>
+                    <button type="button" class="btn btn-outline-primary" (click)="showAlert('The alert with message, title and close.', 'Alert Message', true)">Only Message Alert</button>
+                </div>
+                <div class="example-code">
+                    <pre class="prettyprint lang-typescript">this.alertService.alert("The only message alert.");
+this.alertService.alert("The alert with message and title.", "Alert Message");
+this.alertService.alert("The alert with message and title.", "Alert Message", true);</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="alert-response" class="topic-block">
+        <h1><span class="icon-chevron-right"></span> Response Handling</h1>
+        <div class="content">
+            <p class="lead">The <code>alert</code> function returns an <code>Observable</code> that you can subscribe to get the user's reponse against the alert box.
+            The function you pass to subscribe, should accept one <code>String</code> value or an object of <code>AlertConfirmResponse</code> Enum. 
+            <br/>
+            The Enum <code>AlertConfirmResponse</code> has two propeties for alert box i.e., <code>ALERT_OKAY</code> and <code>ALERT_CLOSE</code>. 
+            The value <code>ALERT_OKAY</code> indicates that user clicked 'Okay' button and <code>ALERT_CLOSE</code> indicates that user closed 
+            the alert box by clicking the cross button or backdrop or by pressing escape button.
+            </p>
+            <div class="example">
+                <div class="example-sample">
+                    <button type="button" class="btn btn-outline-primary" (click)="alertResponseExample()">Click for Alert</button>
+                </div>
+                <div class="example-code">
+                    <pre class="prettyprint lang-typescript">this.alertService.alert('This example to demontrate the return value', 
+    'Alert Response Example', true)
+    .subscribe( value => {{'{'}}
+        if(value == AlertConfirmResponse.ALERT_OKAY) {{'{'}}
+            alert('User clicked \'Okay\' button');
+        {{'}'}} else if(value == AlertConfirmResponse.ALERT_CLOSE) {{'{'}}
+            alert('User closed the alert box');
+        {{'}'}}
+    {{'}'}});</pre>
+                </div>
+            </div>
+            <p class="lead">
+                Tha's all for Alert Box. Now, let's move on to the next chapter.
+            </p>
+            <div class="text-right">
+                <a class="btn btn-primary px-5" routerLink="../confirm-demo" title="Alert Box">Next <span class="icon-arrow-right"></span></a>
+            </div>
+        </div>
+    </div>
+</div>

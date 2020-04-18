@@ -41,8 +41,8 @@
             </p>
         </div>
     </div>
-    <div id="final-setup" class="topic-block">
-        <h1><span class="icon-chevron-right"></span> Final Setup</h1>
+    <div id="module-include" class="topic-block">
+        <h1><span class="icon-chevron-right"></span> Include Module</h1>
         <div class="content">
             <p class="lead">
                 You need to include the <code>NgGrowlAlertModule</code> in all modules where you need it.
@@ -66,8 +66,13 @@
 export class AppModule {{'{ }'}}</pre>
                 </div>
             </div>
+        </div>
+    </div>
+    <div id="final-step" class="topic-block">
+        <h1><span class="icon-chevron-right"></span> Final Step</h1>
+        <div class="content">
             <p class="lead">
-                As a last step, you have to add the <code>ng-growl-alert</code> component in root component html (As the last line).
+                You have to add the <code>ng-growl-alert</code> component in root component html (As the last line).
             </p>
             <div class="example">
                 <div class="example-code">
@@ -75,6 +80,30 @@ export class AppModule {{'{ }'}}</pre>
 &lt;router-outlet&gt;&lt;/router-outlet&gt;
 ...
 &lt;ng-growl-alert&gt;&lt;/ng-growl-alert&gt;</pre>
+                </div>
+            </div>
+            <p class="lead">
+                Finally, you just need to import one service <code>NgGrowlAlertService</code> from <code>ng-growl-alert</code> to your component, where you want to use.
+            </p>
+            <div class="example">
+                <div class="example-code">
+                    <pre class="prettyprint lang-typescript">import {{'{'}} NgGrowlAlertService {{'}'}} from 'ng-growl-alert'; 
+...
+
+@Component({{'{'}}
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
+  {{'}'}})
+  export class AppComponent implements OnInit {{'{'}}
+    
+    constructor(private alertService : NgGrowlAlertService) {{'{'}}
+      
+    {{'}'}}
+  
+    ngOnInit(): void {{'{'}}
+    }
+  {{'}'}}  </pre>
                 </div>
             </div>
             <p class="lead">
